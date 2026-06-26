@@ -1,24 +1,33 @@
-# README
+# 我慢貯金箱
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 概要
+このアプリは日々の節約したこと、我慢したことを可視化するためのアプリです。
+節約したことなどを追加、その金額額の合計値を可視化することができます。
 
-Things you may want to cover:
+## 使用技術
+- Ruby 3.2.3
+- Rails 7.1.2
+- PostgreSQL 16
+- Docker / Docker Compose
 
-* Ruby version
+## セットアップ
+\```bash
+#　リポジトリをクローン
+git clone git@github.com:Kotiramisu/gaman_chokin.git
 
-* System dependencies
+# コンテナのビルドと起動
+docker compose up --build
 
-* Configuration
+# データベースの作成
+docker compose exec web rails db:create
 
-* Database creation
+# マイグレーションの実行
+docker compose exec web rails db:migrate
+\```
 
-* Database initialization
+## 開発環境へのアクセス
+http://localhost:3000
 
-* How to run the test suite
+## 機能一覧
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 今後の追加予定機能
