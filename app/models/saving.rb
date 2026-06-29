@@ -1,5 +1,4 @@
 class Saving < ApplicationRecord
-  
   belongs_to :user
 
   validates :title, presence: true
