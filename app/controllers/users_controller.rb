@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to @user, notice: 'ユーザー登録が完了しました'
+      redirect_to @user, notice: "ユーザー登録が完了しました"
     else
       render :new, status: :unprocessable_entity
     end
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-     redirect_to @user, notice: 'ユーザー情報を更新しました'
+     redirect_to @user, notice: "ユーザー情報を更新しました"
     else
      render :edit
     end
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    redirect_to users_path, notice: 'ユーザーを削除しました'
+    redirect_to users_path, notice: "ユーザーを削除しました"
   end
 
   private
