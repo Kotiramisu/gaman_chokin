@@ -1,0 +1,8 @@
+<h1>貯金記録詳細</h1>
+
+<p>我慢したもの: <%= @saving.title %></p>
+<p>金額: <%= @saving.amount %></p>
+<p>日付: <%= @saving.saved_at %></p>
+<%= link_to '一覧に戻る', savings_path %>
+<%= link_to '編集', edit_saving_path(@saving) %>
+<%= button_to '削除', saving_path(@saving), method: :delete, data: { turbo_confirm: '本当に削除しますか？' }, class: 'btn btn-danger' %>

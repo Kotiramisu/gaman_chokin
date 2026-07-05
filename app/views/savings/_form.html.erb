@@ -1,0 +1,29 @@
+<%= form_with model: @saving do |f| %>
+  <% if @saving.errors.any? %>
+    <div class="error-messages">
+      <h2><%= @saving.errors.count %>件のエラーがあります</h2>
+      <ul>
+        <% @saving.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title, '我慢したもの' %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :amount, '金額' %>
+    <%= f.number_field :amount %>
+  </div>
+
+  <div class="field">
+    <%= f.label :saved_at, '日付' %>
+    <%= f.date_field :saved_at %>
+  </div>
+
+<%= f.submit '登録', class: 'btn btn-primary' %>
+<% end %>
