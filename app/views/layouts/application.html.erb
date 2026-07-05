@@ -18,6 +18,14 @@
   </head>
 
   <body>
+    <header>
+      <nav style="background-color: #808080; padding: 1rem">
+        <ul style="list-style: none; display: flex; gap: 2rem; margin: 0; padding: 0;">
+          <li><%= link_to '貯金記録一覧', savings_path, style: 'color: white; text-decoration: none;' %></li>
+        </ul>
+      </nav>
+    </header>
+    
     <%= yield %>
   </body>
 </html>
