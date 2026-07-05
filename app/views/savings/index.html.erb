@@ -1,0 +1,25 @@
+<h1>貯金記録一覧</h1>
+
+<%= link_to '新規作成', new_saving_path %>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>我慢したもの</th>
+      <th>金額</th>
+      <th>日付</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @saving.each do |saving| %>
+      <tr>
+        <td><%= saving.title %></td>
+        <td><%= saving.amount %></td>
+        <td><%= saving.saved_at %></td>
+        <td><%= link_to '詳細', saving_path(saving) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
