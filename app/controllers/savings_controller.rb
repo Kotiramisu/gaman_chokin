@@ -11,7 +11,8 @@ class SavingsController < ApplicationController
   end
 
   def index
-    @saving = Saving.all
+    @saving = Saving.all.order(saved_at: :desc)
+    @monthly_total = Saving.where(saved_at: Time.current.beginning_of_month..Time.current.end_of_month).sum(:amount)
   end
 
   def new
