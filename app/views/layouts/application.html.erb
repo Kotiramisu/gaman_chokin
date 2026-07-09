@@ -18,13 +18,7 @@
   </head>
 
 <body style="background-color: #000; color: white; margin: 0; padding: 0;">
-    <header>
-      <nav style="background-color: #3e3e3e; padding: 1rem">
-        <ul style="list-style: none; display: flex; gap: 2rem; margin: 0; padding: 0;">
-          <li><%= link_to '貯金記録一覧', savings_path, style: 'color: white; text-decoration: none;' %></li>
-        </ul>
-      </nav>
-    </header>
+     <%= render 'shared/header' %>
 
      <% if flash[:notice] %>
       <div style="background-color: #d4edda; color: #155724; padding: 1rem; margin: 1rem; border: 1px solid #c3e6cb; border-radius: 4px;">

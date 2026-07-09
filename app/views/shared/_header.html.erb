@@ -1,0 +1,16 @@
+<header>
+ <nav style="background-color: #3e3e3e; padding: 1rem">
+        <ul style="list-style: none; display: flex; gap: 2rem; margin: 0; padding: 0;">
+          <li><%= link_to '貯金記録', savings_path, style: 'color: #FFD700; text-decoration: none;' %></li>
+          
+          <li style="margin-left: auto;">
+            <% if logged_in? %>
+          <span style="color: white; margin-right: 1rem;"><%= current_user.name %> さん</span>
+             <%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete }, style: 'color: #FFD700; text-decoration: none; border: 1px solid #FFD700; padding: 0.5rem 1rem; border-radius: 4px;' %>
+            <% else %>
+             <%= link_to 'ログイン', login_path, style: 'color: #FFD700; text-decoration: none; border: 1px solid #FFD700; padding: 0.5rem 1rem; border-radius: 4px;' %>
+            <% end %>
+          </li>
+        </ul>
+ </nav>
+</header>
