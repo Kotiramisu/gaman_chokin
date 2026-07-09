@@ -1,0 +1,19 @@
+<div style="max-width: 500px; margin: 0 auto; padding: 2rem;">
+  <h1 style="text-align: center; color: #bb00ff; margin-bottom: 2rem;">ログイン</h1>
+
+  <%= form_with(url: login_path, local: true) do |form| %>
+    <div style="margin-bottom: 1.5rem;">
+      <%= form.label :email, 'メールアドレス', style: 'display: block; margin-bottom: 0.5rem; color: #FFD700;' %>
+      <%= form.email_field :email, style: 'width: 100%; padding: 0.5rem; border-radius: 4px; border: 1px solid #333; background-color: #1a1a1a; color: #fff;' %>
+    </div>
+
+    <div style="margin-bottom: 1.5rem;">
+      <%= form.label :password, 'パスワード', style: 'display: block; margin-bottom: 0.5rem; color: #FFD700;' %>
+      <%= form.password_field :password, style: 'width: 100%; padding: 0.5rem; border-radius: 4px; border: 1px solid #333; background-color: #1a1a1a; color: #fff;' %>
+    </div>
+
+    <div style="text-align: center;">
+      <%= form.submit 'ログイン', style: 'background-color: #FFD700; color: #000; padding: 0.75rem 2rem; border-radius: 4px; border: none; font-weight: bold; cursor: pointer;' %>
+    </div>
+  <% end %>
+</div>
