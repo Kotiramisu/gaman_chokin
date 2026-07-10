@@ -1,8 +1,10 @@
+<div style="max-width: 600px; margin: 0 auto; padding: 2rem;">
+
 <%= form_with model: @user do |f| %>
   <% if @user.errors.any? %>
-    <div class="error-messages">
-      <h2><%= @user.errors.count %>件のエラーがあります</h2>
-      <ul>
+    <div style="background-color: #f8d7da; color: #721c24; padding: 1rem; margin-bottom: 1.5rem; border: 1px solid #f5c6cb; border-radius: 4px;">
+      <h2 style="font-size: 1.2rem; margin-bottom: 0.5rem;"><%= @user.errors.count %>件のエラーがあります</h2>
+      <ul style="margin: 0; padding-left: 1.5rem;">
         <% @user.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
@@ -10,25 +12,26 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name, '名前' %>
-    <%= f.text_field :name %>
+  <div style="margin-bottom: 1.5rem;">
+    <%= f.label :name, '名前', style: 'display: block; margin-bottom: 0.5rem; color: #FFD700;' %>
+    <%= f.text_field :name, style: 'width: 100%; padding: 0.5rem; border-radius: 4px; border: 1px solid #333; background-color: #1a1a1a; color: #fff' %>
   </div>
 
-  <div class="field">
-    <%= f.label :email, 'メールアドレス' %>
-    <%= f.email_field :email %>
+  <div style="margin-bottom: 1.5rem;">
+    <%= f.label :email, 'メールアドレス', style: 'display: block; margin-bottom: 0.5rem; color: #FFD700;'%>
+    <%= f.email_field :email, style: 'width: 100%; padding: 0.5rem; border-radius: 4px; border: 1px solid #333; background-color: #1a1a1a; color: #fff' %>
   </div>
 
-  <div class="field">
-    <%= f.label :password, 'パスワード' %>
-    <%= f.password_field :password %>
+  <div style="margin-bottom: 1.5rem;">
+    <%= f.label :password, 'パスワード', style: 'display: block; margin-bottom: 0.5rem; color: #FFD700;' %>
+    <%= f.password_field :password, style: 'width: 100%; padding: 0.5rem; border-radius: 4px; border: 1px solid #333; background-color: #1a1a1a; color: #fff' %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation, 'パスワード（確認）' %>
-    <%= f.password_field :password_confirmation %>
+  <div style="margin-bottom: 1.5rem;">
+    <%= f.label :password_confirmation, 'パスワード（確認）', style: 'display: block; margin-bottom: 0.5rem; color: #FFD700;' %>
+    <%= f.password_field :password_confirmation, style: 'width: 100%; padding: 0.5rem; border-radius: 4px; border: 1px solid #333; background-color: #1a1a1a; color: #fff' %>
   </div>
 
-<%= f.submit '登録', class: 'btn btn-primary' %>
+<%= f.submit '登録', style: 'background-color: #FFD700; color: #000; padding: 0.75rem 1.5rem; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; margin-top: 1rem;' %>
 <% end %>
+</div>
