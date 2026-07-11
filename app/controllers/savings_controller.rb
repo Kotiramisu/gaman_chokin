@@ -35,7 +35,7 @@ class SavingsController < ApplicationController
 
   def destroy
     @saving.destroy
-    redirect_to users_path, notice: "貯金記録を削除しました"
+    redirect_to savings_path, notice: "貯金記録を削除しました"
   end
 
   private
