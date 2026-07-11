@@ -1,0 +1,30 @@
+<div style="text-align: center; padding: 2rem; background-color: #1a1a1a; min-height: 100vh;">
+ <h1 style="color: #FFD700; font-size: 2.5rem; margin-bottom: 1rem;">
+    💰我慢貯金箱
+ </h1>
+ <%= image_tag "saving_pig.png", alt: "豚の貯金箱", style: "width: 400px; height: auto; display: block; margin: 0 auto;" %>
+ <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+    あなたの我慢したものを仮想で貯金するアプリです
+ </p>
+
+ <div style="margin-bottom: 2rem;">
+    <p>✅ 我慢したもの、金額を記録できる</p>
+    <p>✅ 月毎の金額を可視化できる</p>
+    <p>✅ 節約思考が身に付く</p>
+ </div>
+
+ <div style="margin-bottom: 1rem;">
+    <p style="color: #bb00ff;">
+     貯金を初めてみる↓  
+    </p>
+    <%= link_to '新規登録', new_user_path, style: 'background-color: #FFD700; color: #000; padding: 0.75rem 1.5rem; border-radius: 4px; text-decoration: none; font-size: 1.1rem; display: inline-block;' %>
+ </div>
+
+ <div>
+    <p>
+      すでにアカウントをお持ちの方は
+      <%= link_to 'ログイン', login_path, style: 'color: #FFD700; text-decoration: none;' %>
+    </p>
+ </div>
+
+</div>
