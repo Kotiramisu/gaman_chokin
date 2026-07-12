@@ -2,9 +2,9 @@ class SavingsController < ApplicationController
  before_action :set_saving, only: %i[show edit update destroy]
 
   def create
-    @saving = current_savings.new(saving_params)
+    @saving = current_user.savings.new(saving_params)
     if @saving.save
-      redirect_to @saving, notice: "貯金記録登録が完了しました"
+      redirect_to savings_path, notice: "貯金記録登録が完了しました"
     else
       render :new, status: :unprocessable_entity
     end
