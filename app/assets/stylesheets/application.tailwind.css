@@ -53,3 +53,19 @@
   margin-top: 1rem;
 }
 
+.title {
+  text-align: center;
+  color: #bb00ff;
+  margin-bottom: 2rem;
+}
+
+.back-link-container {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.back-link {
+  color: #FFD700;
+  cursor: pointer;
+}
+
