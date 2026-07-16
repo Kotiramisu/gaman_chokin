@@ -1,10 +1,10 @@
-<div style="max-width: 600px; margin: 0 auto; padding: 2rem;">
+<div class="container">
 
  <%= form_with model: @saving do |f| %>
   <% if @saving.errors.any? %>
-  <div style="background-color: #f8d7da; color: #721c24; padding: 1rem; margin-bottom: 1.5rem; border: 1px solid #f5c6cb; border-radius: 4px;">
-      <h2 style="font-size: 1.2rem; margin-bottom: 0.5rem;"><%= @saving.errors.count %>件のエラーがあります</h2>
-      <ul style="margin: 0; padding-left: 1.5rem;">
+  <div class="flash-message">
+      <h2 class="flash-message-text-big"><%= @saving.errors.count %>件のエラーがあります</h2>
+      <ul class="flash-message-text">
         <% @saving.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
@@ -12,21 +12,21 @@
   </div>
   <% end %>
 
- <div style="margin-bottom: 1.5rem;">
-    <%= f.label :title, '我慢したもの', style: 'display: block; margin-bottom: 0.5rem; color: #FFD700;' %>
-    <%= f.text_field :title, style: 'width: 100%; padding: 0.5rem; border-radius: 4px; border: 1px solid #333; background-color: #1a1a1a;' %>
+ <div class="form-group">
+    <%= f.label :title, '我慢したもの', class: "form-label" %>
+    <%= f.text_field :title, class: "form-input" %>
  </div>
 
- <div style="margin-bottom: 1.5rem;">
-    <%= f.label :amount, '金額', style: 'display: block; margin-bottom: 0.5rem; color: #FFD700;' %>
-    <%= f.number_field :amount, style: 'width: 100%; padding: 0.5rem; border-radius: 4px; border: 1px solid #333; background-color: #1a1a1a;' %>
+ <div class="form-group">
+    <%= f.label :amount, '金額', class: "form-label" %>
+    <%= f.number_field :amount, class: "form-input" %>
  </div>
 
- <div style="margin-bottom: 1.5rem;">
-    <%= f.label :saved_at, '日付', style: 'display: block; margin-bottom: 0.5rem; color: #FFD700;' %>
-    <%= f.date_field :saved_at, style: 'width: 100%; padding: 0.5rem; border-radius: 4px; border: 1px solid #333; background-color: #1a1a1a;' %>
+ <div class="form-group">
+    <%= f.label :saved_at, '日付', class: "form-label" %>
+    <%= f.date_field :saved_at, class: "form-input" %>
  </div>
 
- <%= f.submit '登録', style: 'background-color: #FFD700; color: #000; padding: 0.5rem 1rem; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; margin-top: 1rem;' %>
+ <%= f.submit '登録', class: 'btn' %>
  <% end %>
 </div>
