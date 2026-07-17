@@ -1,29 +1,29 @@
-<div style="max-width: 600px; margin: 0 auto; padding: 2rem;">
- <h1 style="text-align: center; color: #bb00ff; margin-bottom: 2rem;">ユーザー詳細</h1>
+<div class="container">
+ <h1 class="title">ユーザー詳細</h1>
 
- <div style="margin-bottom: 1.5rem;">
-  <div style="display: block; margin-bottom: 0.5rem; color: #FFD700;">
+ <div class="form-group">
+  <div class="form-label">
     名前
   </div>
 
-  <div style="padding: 0.5rem; border: 1px solid #333; border-radius: 4px; background-color: #1a1a1a;">
+  <div class="form-label-show">
     <%= @user.name %>
   </div>
  </div>
 
- <div style="margin-bottom: 1.5rem;">
-  <div style="display: block; margin-bottom: 0.5rem; color: #FFD700;">
+ <div class="form-group">
+  <div class="form-label">
     メールアドレス
   </div>
 
-  <div style="padding: 0.5rem; border: 1px solid #333; border-radius: 4px; background-color: #1a1a1a;">
+  <div class="form-label-show">
     <%= @user.email %>
   </div>
  </div>
 
-  <%= link_to '編集', edit_user_path(@user), style: 'background-color: #FFD700; color: #000; padding: 0.5rem 1rem; border: none; border-radius: 4px; font-size: 1rem; margin-top: 1rem;' %>
+  <%= link_to '編集', edit_user_path(@user), class: 'btn' %>
 
- <div style="text-align: center; margin-top: 1rem;">
-  <%= link_to '戻る', savings_path, style: "color: #bb00ff;" %>
+ <div class="back-link-container">
+  <%= link_to '戻る', savings_path, class: 'back-link' %>
  </div>
 </div>
