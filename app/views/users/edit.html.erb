@@ -1,7 +1,9 @@
-<h1 style="text-align: center; color: #bb00ff; margin-bottom: 2rem;">ユーザー編集</h1>
+<div class="container">
+<h1 class="title">ユーザー編集</h1>
 
-<%= render 'form' %>
+ <%= render 'form' %>
 
-<div style="text-align: center; margin-top: 1rem;">
- <%= link_to '戻る', user_path(@user), style: "color: #bb00ff;" %>
+ <div class="back-link-container">
+ <%= link_to '戻る', user_path(@user), class: 'back-link' %>
+ </div>
 </div>
