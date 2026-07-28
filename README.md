@@ -11,6 +11,7 @@ https://gaman-chokin.onrender.com
 
 ### 我慢記録一覧ページ
 ![メインページ](docs/images/main.png)
+![メインページ我慢一覧](docs/images/main2.png)
 
 ### 登録ページ
 ![登録ページ](docs/images/submit.png)
