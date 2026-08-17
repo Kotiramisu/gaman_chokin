@@ -5,10 +5,22 @@
           
           <li style="margin-left: auto;">
             <% if logged_in? %>
+
             <%= link_to "#{current_user.name} さん", user_path(current_user), style: 'color: #FFD700; text-decoration: none; margin-right: 1rem;' %>
-             <%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete }, style: 'color: #FFD700; text-decoration: none; border: 1px solid #FFD700; padding: 0.5rem 1rem; border-radius: 4px;' %>
+             
+            
+            <% if achievement_rate %>
+              <span style="color: #FFD700; margin-right: 1rem;">
+                達成率：<%= achievement_rate %>%
+              </span>
+            <% end %>
+
+            <%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete }, style: 'color: #FFD700; text-decoration: none; border: 1px solid #FFD700; padding: 0.5rem 1rem; border-radius: 4px;' %>
+
             <% else %>
+
              <%= link_to 'ログイン', login_path, style: 'color: #FFD700; text-decoration: none; border: 1px solid #FFD700; padding: 0.5rem 1rem; border-radius: 4px;' %>
+             
             <% end %>
           </li>
         </ul>
