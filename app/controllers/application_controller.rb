@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
     return nil if current_user.goal_amount.nil?
 
     total = current_user.savings.sum(:amount)
-    (total.to_f / current_user.goal_amount * 100).round
+    [((total.to_f / current_user.goal_amount) * 100).round, 100].min
   end
 
   def authenticate_user!
