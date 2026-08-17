@@ -1,14 +1,29 @@
 <header>
  <nav style="background-color: #3e3e3e; padding: 1rem">
-        <ul style="list-style: none; display: flex; gap: 2rem; margin: 0; padding: 0;">
+        <ul style="list-style: none; display: flex; align-items: center; gap: 2rem; margin: 0; padding: 0;">
           <li><%= link_to '我慢記録', savings_path, style: 'color: #FFD700; text-decoration: none;' %></li>
           
-          <li style="margin-left: auto;">
-            <% if logged_in? %>
+          <li style="margin-left: auto; display: flex; align-items: center; gap: 1rem;">
+            <% if logged_in? %>             
+            
+            <% if achievement_rate %>
+               <div style="color: #FFD700; margin-right: 1rem;">
+                  <span>達成率：<%= achievement_rate %> % </span>
+
+                  <div style="width: 100px; height: 8px; background-color: #666; border-radius: 4px;">
+                    <div style="width: <%= achievement_rate %>%; height: 100%; background-color: #FFD700; border-radius: 4px;"></div>
+                  </div>
+                </div>
+            <% end %>
+
             <%= link_to "#{current_user.name} さん", user_path(current_user), style: 'color: #FFD700; text-decoration: none; margin-right: 1rem;' %>
-             <%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete }, style: 'color: #FFD700; text-decoration: none; border: 1px solid #FFD700; padding: 0.5rem 1rem; border-radius: 4px;' %>
+
+            <%= link_to 'ログアウト', logout_path, data: { turbo_method: :delete }, style: 'color: #FFD700; text-decoration: none; border: 1px solid #FFD700; padding: 0.5rem 1rem; border-radius: 4px;' %>
+
             <% else %>
+
              <%= link_to 'ログイン', login_path, style: 'color: #FFD700; text-decoration: none; border: 1px solid #FFD700; padding: 0.5rem 1rem; border-radius: 4px;' %>
+
             <% end %>
           </li>
         </ul>

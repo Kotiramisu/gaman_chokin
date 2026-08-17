@@ -30,5 +30,12 @@
     <%= f.password_field :password_confirmation, class: 'form-input' %>
   </div>
 
+  <% if @user.persisted? %>
+    <div class="form-group">
+      <%= f.label :goal_amount, '目標金額', class: 'form-label' %>
+      <%= f.number_field :goal_amount, class: 'form-input' %>
+    </div>
+  <% end %>
+
 <%= f.submit '登録', class: 'btn' %>
 <% end %>
