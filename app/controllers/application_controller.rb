@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   allow_browser versions: :modern
-  helper_method :current_user, :logged_in?
+  helper_method :current_user, :logged_in?, :achievement_rate
   before_action :authenticate_user!
 
   private
@@ -12,6 +12,13 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     current_user.present?
+  end
+
+  def achievement_rate
+    return nil if current_user.goal_amount.nil?
+
+    total = current_user.savings.sum(:amount)
+    (total.to_f / current_user.goal_amount * 100).round
   end
 
   def authenticate_user!
