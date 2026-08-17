@@ -14,7 +14,11 @@ class SavingsController < ApplicationController
     @saving = Saving.all.order(saved_at: :desc)
     @monthly_total = current_user.savings.where(saved_at: Time.current.beginning_of_month..Time.current.end_of_month).sum(:amount)
     @total = current_user.savings.sum(:amount)
-    @achievement_rate = (@total.to_f / current_user.goal_amount * 100).round
+    if current_user.goal_amount.nil?
+      @achievement_rate = nil
+    else
+      @achievement_rate = (@total.to_f / current_user.goal_amount * 100).round
+    end
   end
 
   def new
