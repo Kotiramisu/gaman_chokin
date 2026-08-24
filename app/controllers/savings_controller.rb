@@ -11,7 +11,7 @@ class SavingsController < ApplicationController
   end
 
   def index
-    @saving = Saving.all.order(saved_at: :desc)
+    @saving = current_user.savings.all.order(saved_at: :desc)
     @monthly_total = current_user.savings.where(saved_at: Time.current.beginning_of_month..Time.current.end_of_month).sum(:amount)
     @total = current_user.savings.sum(:amount)
     if current_user.goal_amount.nil?
