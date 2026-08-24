@@ -1,10 +1,12 @@
 <header>
  <nav style="background-color: #3e3e3e; padding: 1rem">
         <ul style="list-style: none; display: flex; align-items: center; gap: 2rem; margin: 0; padding: 0;">
-          <li><%= link_to '我慢記録', savings_path, style: 'color: #FFD700; text-decoration: none;' %></li>
+          <li><%= link_to '我慢貯金', savings_path, style: 'color: #FFD700; text-decoration: none;' %></li>
           
           <li style="margin-left: auto; display: flex; align-items: center; gap: 1rem;">
-            <% if logged_in? %>             
+            <% if logged_in? %>
+            
+            <span style= 'color: #bb00ff; margin-right: 1rem; font-size: 24px;'>総額 ¥ <%= number_with_delimiter(total) %>  </span>
             
             <% if achievement_rate %>
                <div style="color: #FFD700; margin-right: 1rem;">
