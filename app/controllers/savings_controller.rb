@@ -51,6 +51,6 @@ class SavingsController < ApplicationController
   end
 
   def set_saving
-    @saving = Saving.find(params[:id])
+    @saving = current_user.savings.find(params[:id])
   end
 end
